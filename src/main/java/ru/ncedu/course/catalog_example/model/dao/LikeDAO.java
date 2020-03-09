@@ -20,7 +20,7 @@ public class LikeDAO extends AbstractDAO<LikeEntity, Long> {
         init(LikeEntity.class);
     }
 
-    public List<LikeEntity> findByOfferingId(long offeringId) {
+    public List<LikeEntity> findByOfferingId(long offeringId) {  //does not works
         Map<String, Object> params = new HashMap<>();
         params.put("offeringId", offeringId);
 

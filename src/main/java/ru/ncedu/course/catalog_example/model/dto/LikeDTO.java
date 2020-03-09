@@ -7,20 +7,20 @@ import java.util.Date;
 
 public class LikeDTO {
 
-    private Long id;
     private UserDTO author;
+    private OfferingDTO offering;
 
     public LikeDTO(LikeEntity entity) {
-        this.id = entity.getId();
         this.author = new UserDTO(entity.getAuthor());
+        this.offering = new OfferingDTO(entity.getOffering());
     }
 
-    public Long getId() {
-        return id;
+    public OfferingDTO getOffering() {
+        return offering;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setOffering(OfferingDTO offering) {
+        this.offering = offering;
     }
 
     public UserDTO getAuthor() {

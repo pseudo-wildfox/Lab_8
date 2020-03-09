@@ -74,10 +74,11 @@
                         <c:forEach items="${map}" var="entry">
                             <c:choose>
                                 <c:when test="${offering.id == entry.key}">
+                                    <br>
+                                    Likes: ${entry.value}
                                     <form action="${pageContext.request.contextPath}/like?id=${offering.id}" method="post">
-                                        <input type="submit" name="button1" value="<3" />
+                                        <input type="submit" name="button1" value="Like" />
                                     </form>
-                                    <strong> ${entry.value}</strong>
                                 </c:when>
                             </c:choose>
                         </c:forEach>

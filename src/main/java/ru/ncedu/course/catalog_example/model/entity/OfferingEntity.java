@@ -3,6 +3,7 @@ package ru.ncedu.course.catalog_example.model.entity;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
+import java.util.Objects;
 
 @Entity
 @Table(name = "offerings")
@@ -89,4 +90,22 @@ public class OfferingEntity implements Serializable {
         this.comments = comments;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        OfferingEntity that = (OfferingEntity) o;
+        return price == that.price &&
+                Objects.equals(id, that.id) &&
+                Objects.equals(name, that.name) &&
+                Objects.equals(category, that.category) &&
+                Objects.equals(owner, that.owner) &&
+                Objects.equals(comments, that.comments) &&
+                Objects.equals(likes, that.likes);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, price, category, owner, comments, likes);
+    }
 }

@@ -65,6 +65,7 @@ public class CatalogServlet extends HttpServlet {
             likeMap.put(offering.getId(), count);
         }
 
+
         getServletContext().setAttribute(LIKESMAP_ATTR, likeMap);
 
         getServletContext().getRequestDispatcher(CATALOG_JSP).forward(req, resp);
